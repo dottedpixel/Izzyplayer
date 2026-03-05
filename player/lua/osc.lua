@@ -1237,7 +1237,7 @@ local function window_controls(topbar)
     ne.content = function ()
         local title = mp.command_native({"expand-text", user_opts.windowcontrols_title})
         title = title:gsub("\n", " ")
-        return title ~= "" and mp.command_native({"escape-ass", title}) or "mpv"
+        return title ~= "" and mp.command_native({"escape-ass", title}) or "IzzyPlayer"
     end
     local left_pad = 5
     local right_pad = 10
@@ -1875,7 +1875,7 @@ local function osc_init()
         local title = state.forced_title or
                       mp.command_native({"expand-text", user_opts.title})
         title = title:gsub("\n", " ")
-        return title ~= "" and mp.command_native({"escape-ass", title}) or "mpv"
+        return title ~= "" and mp.command_native({"escape-ass", title}) or "IzzyPlayer"
     end
     bind_mouse_buttons("title")
 

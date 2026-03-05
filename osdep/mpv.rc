@@ -30,12 +30,12 @@ VS_VERSION_INFO VERSIONINFO
         BLOCK "StringFileInfo" {
             BLOCK "000004b0" {
                 VALUE "Comments", "mpv is distributed under the terms of the GNU General Public License Version 2 or later."
-                VALUE "CompanyName", "mpv"
-                VALUE "FileDescription", "mpv"
+                VALUE "CompanyName", "IzzyPlayer"
+                VALUE "FileDescription", "IzzyPlayer"
                 VALUE "FileVersion", VERSION
                 VALUE "LegalCopyright", MPVCOPYRIGHT_W
                 VALUE "OriginalFilename", "mpv.exe"
-                VALUE "ProductName", "mpv"
+                VALUE "ProductName", "IzzyPlayer"
                 VALUE "ProductVersion", VERSION
             }
         }

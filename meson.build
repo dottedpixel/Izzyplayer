@@ -1,4 +1,4 @@
-project('mpv',
+project('IzzyPlayer',
         'c',
         license: ['GPL2+', 'LGPL2.1+'],
         version: files('./MPV_VERSION'),
@@ -1848,13 +1848,13 @@ if get_option('cplayer')
                  rename: 'mpv.svg')
     install_data('etc/mpv-symbolic.svg', install_dir: join_paths(hicolor_dir, 'symbolic', 'apps'))
 
-    mpv = executable('mpv', main_fn_source, objects: libmpv.extract_all_objects(recursive: true), dependencies: dependencies,
+    mpv = executable('IzzyPlayer', main_fn_source, objects: libmpv.extract_all_objects(recursive: true), dependencies: dependencies,
                      win_subsystem: get_option('win32-subsystem'), install: true)
 
     if win32
         if get_option('win32-subsystem') != 'console'
             wrapper_sources = 'osdep/win32-console-wrapper.c'
-            executable('mpv', wrapper_sources, c_args: ['-municode', '-fno-asynchronous-unwind-tables', '-fno-stack-protector'],
+            executable('IzzyPlayer', wrapper_sources, c_args: ['-municode', '-fno-asynchronous-unwind-tables', '-fno-stack-protector'],
                        link_args: ['-municode', '-nostartfiles', '-nodefaultlibs'],
                        override_options: ['b_sanitize=none'],
                        name_suffix: 'com', install: true)
@@ -1866,7 +1866,7 @@ if get_option('cplayer')
     if darwin
         osxbundle = find_program(join_paths(tools_directory, 'osxbundle.py'), required: true)
         custom_target('macos-bundle',
-            output: 'mpv.app',
+            output: 'IzzyPlayer.app',
             depends: version_h,
             command: [osxbundle, mpv, '@SOURCE_ROOT@', '-c', get_option('macos-bundle-category')],
         )

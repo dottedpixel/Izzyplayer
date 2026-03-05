@@ -299,7 +299,7 @@ class MenuBar: NSObject, EventSubscriber {
 
     @objc func about() {
         NSApp.orderFrontStandardAboutPanel(options: [
-            .applicationName: "mpv",
+            .applicationName: "IzzyPlayer",
             .applicationIcon: appIcon,
             .applicationVersion: String(cString: swift_mpv_version),
             .init(rawValue: "Copyright"): String(cString: swift_mpv_copyright)

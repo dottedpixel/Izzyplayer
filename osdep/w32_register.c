@@ -32,8 +32,8 @@
 
 #include "windows_utils.h"
 
-#define MPV_NAME L"mpv"
-#define MPV_FRIENDLY_NAME L"mpv media player"
+#define MPV_NAME L"IzzyPlayer"
+#define MPV_FRIENDLY_NAME L"IzzyPlayer media player"
 
 #define KEY_AUTOPLAY L"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\AutoplayHandlers"
 #define KEY_MPV_APP L"Software\\Classes\\Applications\\" MPV_NAME L".exe"
@@ -290,10 +290,10 @@ static void w32_register(struct MPContext *mpctx)
     // duplicate this for each supported protocol or file type.
 
     // Register URL handler
-    reg_add_str(log, root, KEY_MPV_PROG_ID("url"), NULL, L"URL:mpv");
+    reg_add_str(log, root, KEY_MPV_PROG_ID("url"), NULL, L"URL:IzzyPlayer");
     reg_add_dwr(log, root, KEY_MPV_PROG_ID("url"), L"EditFlags", FTA_Show);
     reg_add_str(log, root, KEY_MPV_PROG_ID("url"), L"FriendlyTypeName",
-                L"mpv URL handler");
+                L"IzzyPlayer URL handler");
     reg_add_str(log, root, KEY_MPV_PROG_ID("url") L"\\shell", NULL, L"open");
     reg_add_str(log, root, KEY_MPV_PROG_ID("url") L"\\shell\\open\\command",
                 NULL, L"mpv.exe -- \"%L\"");
@@ -337,8 +337,8 @@ static void w32_register(struct MPContext *mpctx)
     }
 
     // Register file handler
-    reg_add_str(log, root, KEY_MPV_PROG_ID("file"), NULL, L"mpv");
-    reg_add_str(log, root, KEY_MPV_PROG_ID("file"), L"FriendlyTypeName", L"mpv Media File");
+    reg_add_str(log, root, KEY_MPV_PROG_ID("file"), NULL, L"IzzyPlayer");
+    reg_add_str(log, root, KEY_MPV_PROG_ID("file"), L"FriendlyTypeName", L"IzzyPlayer Media File");
     reg_add_dwr(log, root, KEY_MPV_PROG_ID("file"), L"EditFlags", FTA_OpenIsSafe);
     reg_add_str(log, root, KEY_MPV_PROG_ID("file") L"\\shell", NULL, L"open");
     reg_add_str(log, root, KEY_MPV_PROG_ID("file") L"\\shell\\open\\command",
@@ -399,15 +399,15 @@ static void w32_register(struct MPContext *mpctx)
 
     // Register uninstaller
     // <https://learn.microsoft.com/windows/win32/msi/uninstall-registry-key>
-    reg_add_str(log, root, KEY_MPV_UNINSTALL, L"DisplayName", L"mpv media player");
+    reg_add_str(log, root, KEY_MPV_UNINSTALL, L"DisplayName", L"IzzyPlayer media player");
     reg_add_str(log, root, KEY_MPV_UNINSTALL, L"DisplayIcon", icon_path);
     reg_add_str(log, root, KEY_MPV_UNINSTALL, L"DisplayVersion", L"" VERSION);
     reg_add_str(log, root, KEY_MPV_UNINSTALL, L"Version", L"" VERSION);
     reg_add_dwr(log, root, KEY_MPV_UNINSTALL, L"Language", 1033);
-    reg_add_str(log, root, KEY_MPV_UNINSTALL, L"UninstallString", L"mpv.exe --no-config --unregister");
+    reg_add_str(log, root, KEY_MPV_UNINSTALL, L"UninstallString", L"IzzyPlayer.exe --no-config --unregister");
     reg_add_dwr(log, root, KEY_MPV_UNINSTALL, L"NoModify", 1);
     reg_add_dwr(log, root, KEY_MPV_UNINSTALL, L"NoRepair", 1);
-    reg_add_str(log, root, KEY_MPV_UNINSTALL, L"Publisher", L"mpv");
+    reg_add_str(log, root, KEY_MPV_UNINSTALL, L"Publisher", L"IzzyPlayer");
     reg_add_str(log, root, KEY_MPV_UNINSTALL, L"HelpLink", L"https://mpv.io/manual");
     reg_add_str(log, root, KEY_MPV_UNINSTALL, L"Readme", L"https://mpv.io/community");
     reg_add_str(log, root, KEY_MPV_UNINSTALL, L"URLInfoAbout", L"https://mpv.io");
